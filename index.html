@@ -6,64 +6,39 @@
         <title>Landing Page</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/png" href="images/miniLogo2.png">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     </head>
 
     <body>
-
-        <header>
-            <!-- Header Section -->
-            <div class="logo">
-                <h2>Daniel Luscombe</h2>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+        <!-- Header Section -->
+        <header class="header">
+            <a class="logo" href="index.html"><h2>DL.</h2></a>
+            <nav class="navbar">
+                <a href="index.html" class="active">About</a>
+                <a href="/pages/projects.html">Projects</a>
+                <!--<a href="#">Contact</a>-->
         </header>
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                test
-            </p>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <h3>Project 1</h3>
-                    <p>test</p>
-                </div>
-                <div class="project-item">
-                    <h3>Project 2</h3>
-                    <p>test</p>
-                </div>
-                <div class="project-item">
-                    <h3>Project 3</h3>
-                    <p>test</p>
+        <!-- About Section -->
+        <section class="about">
+            <div class="about-content">
+                <h1>Hello! I'm Daniel Luscombe.</h1>
+                <h3>Software Developer and Machine Learning Engineer</h3>
+                <p> I am a hard working computer science student extremely passionate about machine learning,
+                     music technology and game development. My goals are to use my skills, learned inside and outside the classroom, 
+                     to solve real-world problems encountered everyday by others - whether big or small. Specifically creating tools, 
+                     services or experiences to drive inspiration for others into creative or scientific fields like music or biology.
+                </p>
+                <div class="btn-box">
+                    <a href="https://www.linkedin.com/in/daniel-luscombe/"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/Daniel-Luscombe"><i class='bx bxl-github'></i></a>
+                    <a href="assets/Daniel Luscombe - Resume.pdf"><i class='bx bxs-file-pdf' ></i></a>
+                    <a href='https://www.instagram.com/dan_luscombe/'><i class='bx bxl-instagram' ></i></a>
                 </div>
             </div>
+            <div class="about-img">
+                <img src="images/profImage.png" alt="profile-photo">
+            </div>
         </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form action="#">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-         <!-- Footer Section --> 
-        <footer>
-            <p>&copy; 2024 Daniel Luscombe</p>
-        </footer>
     </body>
-
 </html>

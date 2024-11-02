@@ -1,189 +1,212 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 100%;
-}
-
-html, body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
+    background: #000;
+    color: white;
+    max-height: 100vh;
     flex-direction: column;
-    background-color: #000;
-    padding-top: 70px;
+    overflow: hidden;
 }
 
-/* Header and Footer */
-header, footer {
-    width: 100%;
-    color: #fff;
-    background-image: url(../images/banner.png);
-    background-size: cover;
-    background-position: center;
-    background-color: transparent;
-}
-
-header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    /*background: url(../images/banner.png);
+    background-size: cover;
+    background-position: center;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    transition: height 0.3s;
+    z-index: 100;
 }
 
-.logo h2 {
-    font-size: 30px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin-right: 20px;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
+.logo {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
-    padding: 5px;
-    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: 600;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: 0.5s;
 }
 
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    header {
-        padding: 15px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 10px;
-        display: none;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .logo h2 {
-        font-size: 24px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
+.navbar a:hover, .navbar a.active {
+    color: green;
 }
 
 /* Sections Styling */
 section {
-    height: 100vh;  /* Each section takes up full screen height */
+    height: 100vh;
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: #fff;
-    text-align: center;
-}
-
-#about, #contact {
-    background-color: #111;
-}
-
-#projects {
-    background-color: #000;
-}
-
-.project-list {
-    display: flex;
     gap: 20px;
-    overflow-x: auto;
-    padding: 20px 0;
-    scroll-behavior: smooth;
 }
 
-.project-item {
-    min-width: 300px;
-    padding: 20px;
-    text-align: center;
+.about { 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
 }
 
-.project-list::-webkit-scrollbar {
-    display: none;
-}
-
-/* Contact Section */
-#contact form {
+.about-content{ 
     max-width: 600px;
-    margin: 0 auto;
+    line-height: 1.2;
 }
 
-#contact input, #contact textarea {
+.about-content h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.about-content h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: green;
+}
+
+.about-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.about-content .btn-box {
+    display: flex;
+    justify-content: inline-flex;
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #222;
+    max-width: 600px;
+    height: 50px;
 }
 
-#contact button {
-    padding: 10px 20px;
-    background: #222;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #000005;
+    border: 2px solid green;
+    border-radius: 8px;
+    font-size: 30px;
+    color: green;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-right: 15px;
 }
 
-#contact button:hover {
-    background: #333;
+.btn-box a:hover {
+    color: black;
 }
 
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #333;
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: green;
+    transition: 0.5s;
+    z-index: -1;
 }
 
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.about-img {
+    width: auto;
+    max-width: 300px;              
+    max-height: 500px;            
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid green;      
+    border-radius: 8px;            
+}
+
+.about-img img {
+    width: 100%;                  
+    height: auto;                  
+    object-fit: contain;
+    border-radius: 8px;           
+    overflow: hidden;
+}
+
+/* Mobile-friendly adjustments */
 @media (max-width: 768px) {
-    section {
-        padding: 40px 10px;
+
+    .header {
+        padding: 20px 5%;              
     }
 
-    .project-item {
-        min-width: 250px;
+    .about {
+        flex-direction: column;         
+        height: auto;                   
+        padding: 100px 5% 20px;              
+        gap: 20px;                     
+    }
+
+    .about-content {
+        max-width: 100%;               
+        text-align: center;            
+    }
+
+    .about-content h1 {
+        font-size: 30px;              
+    }
+
+    .about-content h3 {
+        font-size: 20px;                
+    }
+
+    .about-content p {
+        font-size: 14px;                
+        margin: 15px 0 30px;           
+    }
+
+    .btn-box {
+        display: flex;
+        flex-direction: row;            
+        gap: 10px;                     
+        max-width: 100%;                
+        justify-content: center;            
+    }
+
+    .btn-box a {
+        width: 8%;                
+        font-size: 16px;         
+        margin-right: 0;              
+        min-height: 10px;
+    }
+
+    .about-img {
+        max-width: 80%;                
+        max-height: auto;              
+        align-self: center;             
     }
 }
